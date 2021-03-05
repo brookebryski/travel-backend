@@ -2,19 +2,26 @@ class Api::V1::TripsController < ApplicationController
 
     def index
       @trips = Trip.all 
-      render json @trips
+      render json: @trips
     end
 
     def create
-
-    end
+      @trip = Trip.new(trip_params)
+        if @trip.save
+           render json: @trip
+        else
+          render json: {error: 'Error creating account'}
+        end
+     end
 
     def show
-
+       @trip = Trip.find(params[:id])
+       render json: @trip
     end
 
     def destroy
-
+      @trip = Trip.find(params[:id])
+      @trip.destroy
     end
 
     private
