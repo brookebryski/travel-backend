@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :activities
-  resources :trips
   
+  namespace :api do
+    namespace :v1 do
+      resources :activities
+      resources :trips
+    end
+  end
+
 end
