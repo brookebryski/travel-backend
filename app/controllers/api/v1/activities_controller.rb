@@ -12,7 +12,9 @@ class Api::V1::ActivitiesController < ApplicationController
     end
 
     def create
-      @activity = @trip.activities.new(activity_params)  
+      @activity = @trip.activities.new(activity_params)
+      @activity.save
+      render json: @activity  
     end
   
     def destroy
