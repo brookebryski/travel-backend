@@ -1,0 +1,8 @@
+Trip 
+has_many :sights
+:location - string, :days_spent - integer
+
+
+Activity
+belongs_to :trip
+    :trip_id - integer, :place- string, :kind - string, :date - datetime, :description - string
