@@ -12,7 +12,7 @@ class Api::V1::ActivitiesController < ApplicationController
     end
 
     def create
-        
+      @activity = @trip.activities.new(activity_params)  
     end
   
     def destroy
