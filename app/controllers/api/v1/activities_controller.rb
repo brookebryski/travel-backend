@@ -3,7 +3,8 @@ class Api::V1::ActivitiesController < ApplicationController
     before_action :set_trip
 
     def index
-      render json: @trip.activities
+        @activities = Activity.all
+        render json: @activities
     end
   
     def show
