@@ -10,20 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_05_164716) do
+ActiveRecord::Schema.define(version: 2021_03_10_215345) do
 
-  create_table "activities", force: :cascade do |t|
+  create_table "trip_histories", force: :cascade do |t|
     t.integer "trip_id"
-    t.string "place"
-    t.string "kind"
-    t.string "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "trips", force: :cascade do |t|
-    t.string "location"
-    t.integer "days_spent"
+    t.string "name"
+    t.string "description"
+    t.string "url"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
