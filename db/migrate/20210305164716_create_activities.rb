@@ -5,7 +5,6 @@ class CreateActivities < ActiveRecord::Migration[6.0]
       t.string :place
       t.string :kind
       t.string :description
-      t.datetime :date
 
       t.timestamps
     end

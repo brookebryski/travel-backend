@@ -15,11 +15,14 @@ class Api::V1::ActivitiesController < ApplicationController
     def create
       @activity = @trip.activities.new(activity_params)
       @activity.save
-      render json: @activity  
+      render json: @trip  
     end
   
     def destroy
-       
+       @activity = Activity.find(params["id"])
+       @trip = Trip.find(@activity.trip_id)
+       @activity.destroy
+       render json: @trip
     end
   
       private
@@ -30,7 +33,7 @@ class Api::V1::ActivitiesController < ApplicationController
     
   
     def activity_params
-        params.require(:activity).permit(:trip_id, :place, :kind, :description, :date)
+        params.require(:activity).permit(:trip_id, :place, :kind, :description)
      end
 
 end
