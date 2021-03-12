@@ -1,5 +1,5 @@
 class Api::V1::TripHistoriesController < ApplicationController
-    before_action :set_trip_history, only [:show, update, :destroy]
+    before_action :set_trip_history, only: [:show, update, :destroy]
 
       def index
         @trip_histories = TripHistory.all

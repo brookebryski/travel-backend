@@ -16,7 +16,7 @@ class Api::V1::TripsController < ApplicationController
       if @trip.save
         render json: @trip 
       else
-        render json: {message: @toy.errors }, status: 400
+        render json: {message: @trip.errors }, status: 400
       end 
     end
 

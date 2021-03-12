@@ -7,7 +7,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def show
-     render json: @user, include ['trips.users']
+      render json: @user, include: ['trips.users']
      #research this
     end
 

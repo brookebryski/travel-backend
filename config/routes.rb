@@ -14,7 +14,6 @@ Rails.application.routes.draw do
       end 
 
       resources :users do 
-        # resources :toy_ownerships
         resources :trips 
       end 
        
