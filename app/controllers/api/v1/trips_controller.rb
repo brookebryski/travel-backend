@@ -1,6 +1,5 @@
 class Api::V1::TripsController < ApplicationController 
     before_action :set_trip, only: [:show, :update, :destroy]
-    #review this
 
     def index
      @trips = Trip.all 
@@ -25,7 +24,6 @@ class Api::V1::TripsController < ApplicationController
         render json: @trip
       else
         render json: @trip.errors, status: :unprocessable_entity
-        #look this up
     end
 end
 

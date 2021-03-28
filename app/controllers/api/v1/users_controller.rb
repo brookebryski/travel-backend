@@ -8,7 +8,6 @@ class Api::V1::UsersController < ApplicationController
 
     def show
       render json: @user, include: ['trips.users']
-     #research this
     end
 
     def create
@@ -18,7 +17,6 @@ class Api::V1::UsersController < ApplicationController
         render json: @user
       else
         render json: @user.errors, status: :unprocessable_entity
-        #research this
         end
     end
 
